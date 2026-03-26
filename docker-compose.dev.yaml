@@ -1,0 +1,34 @@
+services:
+  web:
+    image: mgstrm-web-dv:1.0.0
+    container_name: magic-stream-web-dev
+    ports:
+      - "5173:5173"
+    build:
+      context: ./Client/mc
+      dockerfile: Dockerfile.dev
+    develop:
+      watch:
+        - path: ./Client/mc/package.json
+          action: rebuild
+        - path: ./Client/mc/package-lock.json
+          action: rebuild
+        - path: ./Client/mc
+          target: /app
+          action: sync
+
+  api:
+    image: mgstrm-api-dv:1.0.0
+    container_name: magic-stream-api-dev
+    build:
+      context: ./Server/ms
+      dockerfile: Dockerfile.dev
+    develop:
+      watch:
+        - path: ./Server/ms/go.mod
+          action: rebuild
+        - path: ./Server/ms/go.sum
+          action: rebuild
+        - path: ./Server/ms
+          target: /app
+          action: sync
