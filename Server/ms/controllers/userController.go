@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"net/http"
 	"time"
@@ -237,7 +238,6 @@ func LogoutHandler(client *mongo.Client) gin.HandlerFunc {
 		c.JSON(http.StatusOK, gin.H{"message": "Logged out successfully"})
 	}
 }
-
 
 func RefreshTokenHandler(client *mongo.Client) gin.HandlerFunc {
 	return func(c *gin.Context) {
