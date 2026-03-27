@@ -9,7 +9,7 @@ services:
       - "5173:5173"
       
     environment:
-      API_URL: "http://localhost:8080"
+      API_URL: "http://{API_HOST_IP}:8080"
 
   api:
     #image: gavinlon/magic-stream-api:${IMAGE_TAG:-latest}
