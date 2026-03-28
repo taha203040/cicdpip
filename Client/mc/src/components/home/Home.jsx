@@ -31,7 +31,7 @@ const Home =({updateMovieReview}) => {
 
     return (
         <>
-        <h2>hello from action and it works </h2>
+        <h2>hello from action and it works  Lets goo !!</h2>
             {loading ? (
                 <Spinner/>
             ):  (
