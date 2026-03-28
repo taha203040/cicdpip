@@ -10,7 +10,7 @@ services:
 
   api:
     #image: gavinlon/magic-stream-api-prod:1.0.0
-    image: taha200933/mgstrm-web-prod:${IMAGE_TAG:-latest}
+    image: taha200933/mgstrm-api-prod:${IMAGE_TAG:-latest}
     container_name: magic-stream-api-prod
     
     restart: always
