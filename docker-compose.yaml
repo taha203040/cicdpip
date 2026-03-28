@@ -9,7 +9,7 @@ services:
       - "5173:5173"
       
     environment:
-      API_URL: "http://{API_HOST_IP}:8080"
+      API_URL: "http://${API_HOST_IP}:8080"
 
   api:
     #image: gavinlon/magic-stream-api:${IMAGE_TAG:-latest}
@@ -23,7 +23,7 @@ services:
       # SECRET_KEY: "${SECRET_KEY}"
       MONGODB_URI: "mongodb://db:27017"
       DATABASE_NAME: "magic-stream-movies"
-      # ALLOWED_ORIGINS: "${ALLOWED_ORIGINS}"
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS}"
       # REFRESH_TOKEN_SECRET_KEY: "${REFRESH_TOKEN_SECRET_KEY}"
       # OPENAI_API_KEY: "${OPENAI_API_KEY}"
       # BASE_PROMPT_TEMPLATE: > 
