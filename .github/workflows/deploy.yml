@@ -67,8 +67,8 @@ jobs:
           export IMAGE_TAG=${{ steps.meta.outputs.version }} &&
             cd ${{ secrets.EC2_APP_DIR }} &&
             git pull origin main  &&
-          sudo docker-compose -f docker-compose.yaml -f docker-compose.prod.yaml pull &&
-          sudo docker-compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d --remove-orphans
+          sudo docker compose -f docker-compose.yaml -f docker-compose.prod.yaml pull &&
+          sudo docker compose -f docker-compose.yaml -f docker-compose.prod.yaml up -d --remove-orphans
           "
 # Required GitHub Action secrets:
 # EC2_USER: SSH username for the EC2 instance (e.g., 'ubuntu', 'ec2-user')
